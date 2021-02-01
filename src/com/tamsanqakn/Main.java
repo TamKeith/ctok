@@ -29,7 +29,31 @@ public class Main {
                 boolean stop = false;
                 int choice;
 
-
+                while (!stop) {
+                    System.out.println("Do you wish to continue?" +
+                            "\n 1 : Continue" +
+                            "\n 2 : Exit");
+                    boolean isAnInt = scanner.hasNextInt();
+                    if (isAnInt) {
+                        choice = scanner.nextInt();
+                        switch (choice) {
+                            case 1:
+                                stop = true;
+                                break;
+                            case 2:
+                                stop = true;
+                                quit = true;
+                                break;
+                            default:
+                                System.out.println("Please Enter a choice between 1 and 2");
+                                stop = false;
+                                break;
+                        }
+                    } else {
+                        System.out.println("Please Select a choice from the ones shown.");
+                    }
+                    scanner.nextLine();
+                }
 
             } else {
                 scanner.nextLine();
@@ -40,3 +64,4 @@ public class Main {
         System.out.println("Thank You for using the ****Celcius to Kelvin Converter****. Bye");
     }
 }
+
